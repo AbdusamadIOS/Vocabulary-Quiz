@@ -7,25 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE3219582B74DD940065BC9D /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3219562B74DD940065BC9D /* WelcomeVC.swift */; };
+		EE3219592B74DD940065BC9D /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3219572B74DD940065BC9D /* WelcomeVC.xib */; };
+		EE867F302B6CC4C20088512B /* TextDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE867F2F2B6CC4C20088512B /* TextDM.swift */; };
+		EE887D9D2B7A3E2F002E107A /* AnswersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE887D9B2B7A3E2F002E107A /* AnswersCell.swift */; };
+		EE887D9E2B7A3E2F002E107A /* AnswersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE887D9C2B7A3E2F002E107A /* AnswersCell.xib */; };
+		EE99079B2B6D17DE00C3214C /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9907992B6D17DE00C3214C /* LevelCell.swift */; };
+		EE99079C2B6D17DE00C3214C /* LevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE99079A2B6D17DE00C3214C /* LevelCell.xib */; };
+		EE99079F2B6D348D00C3214C /* UnitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99079D2B6D348D00C3214C /* UnitVC.swift */; };
+		EE9907A02B6D348D00C3214C /* UnitVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE99079E2B6D348D00C3214C /* UnitVC.xib */; };
+		EE9907A32B6D365900C3214C /* ScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9907A12B6D365900C3214C /* ScoreVC.swift */; };
+		EE9907A42B6D365900C3214C /* ScoreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9907A22B6D365900C3214C /* ScoreVC.xib */; };
 		EECDDB3A2B5A95B8007A55E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB392B5A95B8007A55E7 /* AppDelegate.swift */; };
-		EECDDB3C2B5A95B8007A55E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB3B2B5A95B8007A55E7 /* SceneDelegate.swift */; };
-		EECDDB3E2B5A95B8007A55E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB3D2B5A95B8007A55E7 /* ViewController.swift */; };
-		EECDDB412B5A95B8007A55E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECDDB3F2B5A95B8007A55E7 /* Main.storyboard */; };
 		EECDDB442B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB422B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld */; };
 		EECDDB462B5A95BA007A55E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECDDB452B5A95BA007A55E7 /* Assets.xcassets */; };
 		EECDDB492B5A95BA007A55E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECDDB472B5A95BA007A55E7 /* LaunchScreen.storyboard */; };
+		EECDDB5A2B5A9644007A55E7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB582B5A9644007A55E7 /* MainVC.swift */; };
+		EECDDB5B2B5A9644007A55E7 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECDDB592B5A9644007A55E7 /* MainVC.xib */; };
+		EED1A38D2B7510CE00D89E27 /* UnitB1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1A38C2B7510CE00D89E27 /* UnitB1.swift */; };
+		EED3C9592B77A3DF00284CA5 /* UnitDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3C9582B77A3DF00284CA5 /* UnitDM.swift */; };
+		EED3C95B2B77A85700284CA5 /* UnitE1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3C95A2B77A85700284CA5 /* UnitE1.swift */; };
+		EED3C95D2B77A87300284CA5 /* UnitPI1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3C95C2B77A87300284CA5 /* UnitPI1.swift */; };
+		EED3C95F2B77A88700284CA5 /* UnitI1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3C95E2B77A88700284CA5 /* UnitI1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE3219562B74DD940065BC9D /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		EE3219572B74DD940065BC9D /* WelcomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
+		EE867F2F2B6CC4C20088512B /* TextDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDM.swift; sourceTree = "<group>"; };
+		EE887D9B2B7A3E2F002E107A /* AnswersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersCell.swift; sourceTree = "<group>"; };
+		EE887D9C2B7A3E2F002E107A /* AnswersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersCell.xib; sourceTree = "<group>"; };
+		EE9907992B6D17DE00C3214C /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
+		EE99079A2B6D17DE00C3214C /* LevelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCell.xib; sourceTree = "<group>"; };
+		EE99079D2B6D348D00C3214C /* UnitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitVC.swift; sourceTree = "<group>"; };
+		EE99079E2B6D348D00C3214C /* UnitVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitVC.xib; sourceTree = "<group>"; };
+		EE9907A12B6D365900C3214C /* ScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreVC.swift; sourceTree = "<group>"; };
+		EE9907A22B6D365900C3214C /* ScoreVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreVC.xib; sourceTree = "<group>"; };
 		EECDDB362B5A95B8007A55E7 /* Vocabulary Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vocabulary Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECDDB392B5A95B8007A55E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EECDDB3B2B5A95B8007A55E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EECDDB3D2B5A95B8007A55E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EECDDB402B5A95B8007A55E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EECDDB432B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vocabulary_Quiz.xcdatamodel; sourceTree = "<group>"; };
 		EECDDB452B5A95BA007A55E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECDDB482B5A95BA007A55E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EECDDB4A2B5A95BA007A55E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EECDDB582B5A9644007A55E7 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		EECDDB592B5A9644007A55E7 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		EED1A38C2B7510CE00D89E27 /* UnitB1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitB1.swift; sourceTree = "<group>"; };
+		EED3C9582B77A3DF00284CA5 /* UnitDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitDM.swift; sourceTree = "<group>"; };
+		EED3C95A2B77A85700284CA5 /* UnitE1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitE1.swift; sourceTree = "<group>"; };
+		EED3C95C2B77A87300284CA5 /* UnitPI1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPI1.swift; sourceTree = "<group>"; };
+		EED3C95E2B77A88700284CA5 /* UnitI1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitI1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE867F2E2B6CC4960088512B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE867F2F2B6CC4C20088512B /* TextDM.swift */,
+				EED3C9582B77A3DF00284CA5 /* UnitDM.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		EECDDB2D2B5A95B8007A55E7 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +97,78 @@
 		EECDDB382B5A95B8007A55E7 /* Vocabulary Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				EECDDB392B5A95B8007A55E7 /* AppDelegate.swift */,
-				EECDDB3B2B5A95B8007A55E7 /* SceneDelegate.swift */,
-				EECDDB3D2B5A95B8007A55E7 /* ViewController.swift */,
-				EECDDB3F2B5A95B8007A55E7 /* Main.storyboard */,
-				EECDDB452B5A95BA007A55E7 /* Assets.xcassets */,
-				EECDDB472B5A95BA007A55E7 /* LaunchScreen.storyboard */,
+				EEF368E62B7492AF00658E4E /* SystemFile */,
+				EECDDB512B5A95E6007A55E7 /* WelcomeVC */,
+				EEF368E42B74922C00658E4E /* MainVC */,
+				EEF368E52B74925900658E4E /* AllCell */,
+				EE867F2E2B6CC4960088512B /* DataModel */,
+				EED1A38B2B75107C00D89E27 /* Vocabulary */,
 				EECDDB4A2B5A95BA007A55E7 /* Info.plist */,
 				EECDDB422B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld */,
 			);
 			path = "Vocabulary Quiz";
+			sourceTree = "<group>";
+		};
+		EECDDB512B5A95E6007A55E7 /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				EE3219562B74DD940065BC9D /* WelcomeVC.swift */,
+				EE3219572B74DD940065BC9D /* WelcomeVC.xib */,
+			);
+			path = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		EED1A38A2B75101700D89E27 /* Essential */ = {
+			isa = PBXGroup;
+			children = (
+				EED1A38C2B7510CE00D89E27 /* UnitB1.swift */,
+				EED3C95A2B77A85700284CA5 /* UnitE1.swift */,
+				EED3C95C2B77A87300284CA5 /* UnitPI1.swift */,
+				EED3C95E2B77A88700284CA5 /* UnitI1.swift */,
+			);
+			path = Essential;
+			sourceTree = "<group>";
+		};
+		EED1A38B2B75107C00D89E27 /* Vocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				EED1A38A2B75101700D89E27 /* Essential */,
+			);
+			path = Vocabulary;
+			sourceTree = "<group>";
+		};
+		EEF368E42B74922C00658E4E /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				EE99079D2B6D348D00C3214C /* UnitVC.swift */,
+				EE99079E2B6D348D00C3214C /* UnitVC.xib */,
+				EECDDB582B5A9644007A55E7 /* MainVC.swift */,
+				EECDDB592B5A9644007A55E7 /* MainVC.xib */,
+				EE9907A12B6D365900C3214C /* ScoreVC.swift */,
+				EE9907A22B6D365900C3214C /* ScoreVC.xib */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		EEF368E52B74925900658E4E /* AllCell */ = {
+			isa = PBXGroup;
+			children = (
+				EE887D9B2B7A3E2F002E107A /* AnswersCell.swift */,
+				EE887D9C2B7A3E2F002E107A /* AnswersCell.xib */,
+				EE9907992B6D17DE00C3214C /* LevelCell.swift */,
+				EE99079A2B6D17DE00C3214C /* LevelCell.xib */,
+			);
+			path = AllCell;
+			sourceTree = "<group>";
+		};
+		EEF368E62B7492AF00658E4E /* SystemFile */ = {
+			isa = PBXGroup;
+			children = (
+				EECDDB392B5A95B8007A55E7 /* AppDelegate.swift */,
+				EECDDB452B5A95BA007A55E7 /* Assets.xcassets */,
+				EECDDB472B5A95BA007A55E7 /* LaunchScreen.storyboard */,
+			);
+			path = SystemFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,8 +230,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECDDB492B5A95BA007A55E7 /* LaunchScreen.storyboard in Resources */,
+				EE887D9E2B7A3E2F002E107A /* AnswersCell.xib in Resources */,
+				EE9907A42B6D365900C3214C /* ScoreVC.xib in Resources */,
+				EECDDB5B2B5A9644007A55E7 /* MainVC.xib in Resources */,
+				EE3219592B74DD940065BC9D /* WelcomeVC.xib in Resources */,
+				EE9907A02B6D348D00C3214C /* UnitVC.xib in Resources */,
+				EE99079C2B6D17DE00C3214C /* LevelCell.xib in Resources */,
 				EECDDB462B5A95BA007A55E7 /* Assets.xcassets in Resources */,
-				EECDDB412B5A95B8007A55E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +247,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE99079F2B6D348D00C3214C /* UnitVC.swift in Sources */,
+				EE3219582B74DD940065BC9D /* WelcomeVC.swift in Sources */,
+				EE99079B2B6D17DE00C3214C /* LevelCell.swift in Sources */,
 				EECDDB442B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld in Sources */,
-				EECDDB3E2B5A95B8007A55E7 /* ViewController.swift in Sources */,
+				EE867F302B6CC4C20088512B /* TextDM.swift in Sources */,
+				EED3C9592B77A3DF00284CA5 /* UnitDM.swift in Sources */,
+				EE9907A32B6D365900C3214C /* ScoreVC.swift in Sources */,
+				EED3C95F2B77A88700284CA5 /* UnitI1.swift in Sources */,
+				EE887D9D2B7A3E2F002E107A /* AnswersCell.swift in Sources */,
+				EECDDB5A2B5A9644007A55E7 /* MainVC.swift in Sources */,
 				EECDDB3A2B5A95B8007A55E7 /* AppDelegate.swift in Sources */,
-				EECDDB3C2B5A95B8007A55E7 /* SceneDelegate.swift in Sources */,
+				EED3C95B2B77A85700284CA5 /* UnitE1.swift in Sources */,
+				EED3C95D2B77A87300284CA5 /* UnitPI1.swift in Sources */,
+				EED1A38D2B7510CE00D89E27 /* UnitB1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EECDDB3F2B5A95B8007A55E7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EECDDB402B5A95B8007A55E7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EECDDB472B5A95BA007A55E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -299,9 +407,10 @@
 				DEVELOPMENT_TEAM = CWJG98258B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vocabulary Quiz/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Vocabulary Quiz";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,9 +436,10 @@
 				DEVELOPMENT_TEAM = CWJG98258B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vocabulary Quiz/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Vocabulary Quiz";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
