@@ -16,40 +16,37 @@ class ScoreVC: UIViewController {
     @IBOutlet weak var refreshBtn: UIButton!
     @IBOutlet weak var homeBtn: UIButton!
     @IBOutlet weak var resultLbl: UILabel!
-   
-    var result: Result?
+    var result = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavBar()
         refreshBtn.layer.cornerRadius = 12
         homeBtn.layer.cornerRadius = 12
-  
-        let vc = MainVC(nibName: "MainVC", bundle: nil)
-        vc.closure = { [self] task in
-            resultLbl.text = String("\(task)")
-            print("ddsdsssddddddddd======\(task)")
-        }
-            
-//            if result <= 14 {
-//                scoreImg.image = UIImage(named: "bad")
-//                firstStarimg.image = UIImage(systemName: "star.fill")
-//                secondStarImg.image = UIImage(systemName: "star")
-//                thredStarImg.image = UIImage(systemName: "star")
-//            } else if result <= 17 {
-//                scoreImg.image = UIImage(named: "good")
-//                firstStarimg.image = UIImage(systemName: "star.fill")
-//                secondStarImg.image = UIImage(systemName: "star.fill")
-//                thredStarImg.image = UIImage(systemName: "star")
-//            } else if result <= 20 {
-//                scoreImg.image = UIImage(named: "nice")
-//                firstStarimg.image = UIImage(systemName: "star.fill")
-//                secondStarImg.image = UIImage(systemName: "star.fill")
-//                thredStarImg.image = UIImage(systemName: "star.fill")
-//            }
+        resultLbl.text = "\(result)"
+
+                if result <= 12 {
+                scoreImg.image = UIImage(named: "bad")
+                navigationItem.title = "Bad!"
+                firstStarimg.image = UIImage(systemName: "star.fill")
+                secondStarImg.image = UIImage(systemName: "star")
+                thredStarImg.image = UIImage(systemName: "star")
+            } else if result <= 16 {
+                navigationItem.title = "Good!"
+                scoreImg.image = UIImage(named: "good")
+                firstStarimg.image = UIImage(systemName: "star.fill")
+                secondStarImg.image = UIImage(systemName: "star.fill")
+                thredStarImg.image = UIImage(systemName: "star")
+            } else if result <= 20 {
+                navigationItem.title = "Very Good!"
+                scoreImg.image = UIImage(named: "nice")
+                firstStarimg.image = UIImage(systemName: "star.fill")
+                secondStarImg.image = UIImage(systemName: "star.fill")
+                thredStarImg.image = UIImage(systemName: "star.fill")
+            }
         }
     func setupNavBar() {
-        navigationItem.title = "Result!"
+//        navigationItem.title = "Result!"
         let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
                                                            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold) ]

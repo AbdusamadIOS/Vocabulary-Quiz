@@ -98,7 +98,7 @@ extension UnitVC: UITableViewDelegate, UITableViewDataSource {
         let rotationTransfer = CATransform3DTranslate(CATransform3DIdentity, -60, -60, -60)
         cell.layer.transform = rotationTransfer
         cell.alpha = 0.6
-        UIView.animate(withDuration: 0.6) {
+        UIView.animate(withDuration: 0.5) {
             cell.layer.transform = CATransform3DIdentity
             cell.alpha = 1
         }

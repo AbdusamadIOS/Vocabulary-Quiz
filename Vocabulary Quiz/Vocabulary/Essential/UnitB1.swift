@@ -217,7 +217,7 @@ struct UnitB2 {
 }
 struct UnitB3 {
     static let vocubularies = [
-        Question(text: "adventure", noun: "noun", answers: [
+        Question(text: "alien", noun: "noun", answers: [
         Answer(text: "jozibador", correct: false),
         Answer(text: "sarguzasht", correct: true),
         Answer(text: "sayohat", correct: false)

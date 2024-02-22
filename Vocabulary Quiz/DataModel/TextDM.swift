@@ -11,7 +11,3 @@ import UIKit
 struct Text {
     var title: String
 }
-
-struct Result {
-    var sums: Int
-}

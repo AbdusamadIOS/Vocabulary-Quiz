@@ -16,8 +16,6 @@ class MainVC: UIViewController {
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var closure:((Result) -> Void)?
-    var result: Result?
     var currentQuestion: Question?
     var timer: Timer?
     var sum = 0
@@ -29,7 +27,8 @@ class MainVC: UIViewController {
         configureUi(question: UnitB1.vocubularies.first!)
         setupNavBar()
         progressTime()
-        conteneirView.layer.cornerRadius = 20
+        conteneirView.layer.cornerRadius = 15
+        conteneirView.clipsToBounds = true
         nextBtn.layer.cornerRadius = 7
         timePV.layer.cornerRadius = 4
     
@@ -79,6 +78,7 @@ class MainVC: UIViewController {
                 } else {
                     timer?.invalidate()
                     let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
+                    scoreVC.result = sum
                     self.navigationController?.setViewControllers([scoreVC], animated: true)
                 }
             }
@@ -92,7 +92,7 @@ class MainVC: UIViewController {
     }
     // Time Button
     @objc func timeBtn() {
-        timePV.progress = timePV.progress - 0.1
+        timePV.progress = timePV.progress - 0.11
         if timePV.progress == 0 {
             print("tugadi va keyingi savol")
            let question = currentQuestion
@@ -106,6 +106,7 @@ class MainVC: UIViewController {
                 } else {
                     timer?.invalidate()
                     let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
+                    scoreVC.result = sum
                     self.navigationController?.setViewControllers([scoreVC], animated: true)
                 }
             }
@@ -139,11 +140,6 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             if let index = UnitB1.vocubularies.firstIndex(where: { $0.text == question.text}) {
                 if index < (UnitB1.vocubularies.count - 1) {
                     sum += 1
-                    let task = Result(sums: sum)
-                    if let closure {
-                        closure(task)
-                    }
-                    print(sum)
                     let nextQuestion = UnitB1.vocubularies[index + 1]
                     currentQuestion = nil
                     configureUi(question: nextQuestion)
@@ -152,6 +148,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 } else {
                     timer?.invalidate()
                     let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
+                    scoreVC.result = sum
                     self.navigationController?.setViewControllers([scoreVC], animated: true)
                 }
             }
@@ -175,7 +172,6 @@ struct Question {
     let answers: [Answer]
     
 }
-
 struct Answer {
     let text: String
     let correct: Bool
