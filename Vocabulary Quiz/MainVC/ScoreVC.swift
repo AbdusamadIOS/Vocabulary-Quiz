@@ -49,7 +49,7 @@ class ScoreVC: UIViewController {
 //        navigationItem.title = "Result!"
         let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold) ]
+                                                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
             navigationController?.navigationBar.standardAppearance = navigationBarAppearance
     }
     
@@ -62,6 +62,7 @@ class ScoreVC: UIViewController {
     @IBAction func homeBtn(_ sender: UIButton) {
         
         let home = WelcomeVC(nibName: "WelcomeVC", bundle: nil)
+        
         self.navigationController?.setViewControllers([home], animated: true)
     }
 }

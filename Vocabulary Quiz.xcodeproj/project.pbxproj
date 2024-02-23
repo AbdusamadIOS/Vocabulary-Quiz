@@ -29,6 +29,8 @@
 		EED3C95B2B77A85700284CA5 /* UnitE1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3C95A2B77A85700284CA5 /* UnitE1.swift */; };
 		EED3C95D2B77A87300284CA5 /* UnitPI1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3C95C2B77A87300284CA5 /* UnitPI1.swift */; };
 		EED3C95F2B77A88700284CA5 /* UnitI1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3C95E2B77A88700284CA5 /* UnitI1.swift */; };
+		EEE6DD592B88BE4F00B19881 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6DD572B88BE4F00B19881 /* UnitCell.swift */; };
+		EEE6DD5A2B88BE4F00B19881 /* UnitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE6DD582B88BE4F00B19881 /* UnitCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		EED3C95A2B77A85700284CA5 /* UnitE1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitE1.swift; sourceTree = "<group>"; };
 		EED3C95C2B77A87300284CA5 /* UnitPI1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPI1.swift; sourceTree = "<group>"; };
 		EED3C95E2B77A88700284CA5 /* UnitI1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitI1.swift; sourceTree = "<group>"; };
+		EEE6DD572B88BE4F00B19881 /* UnitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
+		EEE6DD582B88BE4F00B19881 /* UnitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 				EE887D9C2B7A3E2F002E107A /* AnswersCell.xib */,
 				EE9907992B6D17DE00C3214C /* LevelCell.swift */,
 				EE99079A2B6D17DE00C3214C /* LevelCell.xib */,
+				EEE6DD572B88BE4F00B19881 /* UnitCell.swift */,
+				EEE6DD582B88BE4F00B19881 /* UnitCell.xib */,
 			);
 			path = AllCell;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 				EE887D9E2B7A3E2F002E107A /* AnswersCell.xib in Resources */,
 				EE9907A42B6D365900C3214C /* ScoreVC.xib in Resources */,
 				EECDDB5B2B5A9644007A55E7 /* MainVC.xib in Resources */,
+				EEE6DD5A2B88BE4F00B19881 /* UnitCell.xib in Resources */,
 				EE3219592B74DD940065BC9D /* WelcomeVC.xib in Resources */,
 				EE9907A02B6D348D00C3214C /* UnitVC.xib in Resources */,
 				EE99079C2B6D17DE00C3214C /* LevelCell.xib in Resources */,
@@ -260,6 +267,7 @@
 				EECDDB3A2B5A95B8007A55E7 /* AppDelegate.swift in Sources */,
 				EED3C95B2B77A85700284CA5 /* UnitE1.swift in Sources */,
 				EED3C95D2B77A87300284CA5 /* UnitPI1.swift in Sources */,
+				EEE6DD592B88BE4F00B19881 /* UnitCell.swift in Sources */,
 				EED1A38D2B7510CE00D89E27 /* UnitB1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

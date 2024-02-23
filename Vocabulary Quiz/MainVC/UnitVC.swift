@@ -54,7 +54,7 @@ class UnitVC: UIViewController {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = UIColor(named: "bg")
             navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold) ]
+                                                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
             navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationItem.compactAppearance = navigationBarAppearance
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
@@ -63,13 +63,14 @@ class UnitVC: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(UINib(nibName: "UnitCell", bundle: nil), forCellReuseIdentifier: "UnitCell")
     }
 }
 
 extension UnitVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if leves?.title == "Beginner" {
-            //        units.count
+           
             1
         } else {
             0
@@ -77,12 +78,8 @@ extension UnitVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = units[indexPath.row].text
-        cell.contentView.backgroundColor = UIColor(named: "cell")
-        cell.textLabel?.textColor = .white
-        cell.textLabel?.textAlignment = .center
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UnitCell", for: indexPath) as! UnitCell
+        cell.textLbl.text = units[indexPath.row].text
         return cell
         
     }
