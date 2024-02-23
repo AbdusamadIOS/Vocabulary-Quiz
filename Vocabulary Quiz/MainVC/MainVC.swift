@@ -20,6 +20,7 @@ class MainVC: UIViewController {
     var timer: Timer?
     var sum = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,12 +35,24 @@ class MainVC: UIViewController {
     
     }
     func setupNavBar() {
-        navigationItem.hidesBackButton = true
         navigationItem.title = "Question"
+        navigationItem.hidesBackButton = true
+        
         let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold) ]
+            navigationBarAppearance.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold) ]
             navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        
+        let back = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .done, target: self, action: #selector(backBtn))
+        back.tintColor = .white
+        navigationItem.leftBarButtonItem = back
+    }
+    @objc func backBtn() {
+        
+        timer?.invalidate()
+        print("back")
+        self.navigationController?.popViewController(animated: true)
     }
     
     // TODO: TableView Delegate and DataSource
@@ -92,7 +105,7 @@ class MainVC: UIViewController {
     }
     // Time Button
     @objc func timeBtn() {
-        timePV.progress = timePV.progress - 0.11
+        timePV.progress = timePV.progress - 0.12
         if timePV.progress == 0 {
             print("tugadi va keyingi savol")
            let question = currentQuestion

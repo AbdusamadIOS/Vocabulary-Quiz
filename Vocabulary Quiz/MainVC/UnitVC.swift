@@ -49,7 +49,8 @@ class UnitVC: UIViewController {
     }
     func setupNavBar() {
         navigationItem.backButtonTitle = "back"
-        navigationItem.title = "Units"
+        navigationItem.title = leves?.title
+        navigationController?.navigationBar.tintColor = .white
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = UIColor(named: "bg")
             navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -69,9 +70,9 @@ extension UnitVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if leves?.title == "Beginner" {
             //        units.count
-            20
+            1
         } else {
-            4
+            0
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
