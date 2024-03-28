@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		489B180F2BB52C3800B6D43A /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B180E2BB52C3800B6D43A /* Datas.swift */; };
+		489B18122BB53AB400B6D43A /* 4eew1Quizzes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 489B18112BB53AB400B6D43A /* 4eew1Quizzes.csv */; };
 		EE3219582B74DD940065BC9D /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3219562B74DD940065BC9D /* WelcomeVC.swift */; };
 		EE3219592B74DD940065BC9D /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3219572B74DD940065BC9D /* WelcomeVC.xib */; };
 		EE867F302B6CC4C20088512B /* TextDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE867F2F2B6CC4C20088512B /* TextDM.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		489B180E2BB52C3800B6D43A /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
+		489B18112BB53AB400B6D43A /* 4eew1Quizzes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 4eew1Quizzes.csv; sourceTree = "<group>"; };
 		EE3219562B74DD940065BC9D /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		EE3219572B74DD940065BC9D /* WelcomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
 		EE867F2F2B6CC4C20088512B /* TextDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDM.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				EECDDB392B5A95B8007A55E7 /* AppDelegate.swift */,
 				EECDDB452B5A95BA007A55E7 /* Assets.xcassets */,
 				EECDDB472B5A95BA007A55E7 /* LaunchScreen.storyboard */,
+				489B180E2BB52C3800B6D43A /* Datas.swift */,
+				489B18112BB53AB400B6D43A /* 4eew1Quizzes.csv */,
 			);
 			path = SystemFile;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECDDB492B5A95BA007A55E7 /* LaunchScreen.storyboard in Resources */,
+				489B18122BB53AB400B6D43A /* 4eew1Quizzes.csv in Resources */,
 				EE887D9E2B7A3E2F002E107A /* AnswersCell.xib in Resources */,
 				EE9907A42B6D365900C3214C /* ScoreVC.xib in Resources */,
 				EECDDB5B2B5A9644007A55E7 /* MainVC.xib in Resources */,
@@ -257,6 +264,7 @@
 				EE99079F2B6D348D00C3214C /* UnitVC.swift in Sources */,
 				EE3219582B74DD940065BC9D /* WelcomeVC.swift in Sources */,
 				EE99079B2B6D17DE00C3214C /* LevelCell.swift in Sources */,
+				489B180F2BB52C3800B6D43A /* Datas.swift in Sources */,
 				EECDDB442B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld in Sources */,
 				EE867F302B6CC4C20088512B /* TextDM.swift in Sources */,
 				EED3C9592B77A3DF00284CA5 /* UnitDM.swift in Sources */,
