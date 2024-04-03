@@ -16,11 +16,9 @@ enum QuestionType: String, CaseIterable {
 
 struct QuestionModel {
     var type: QuestionType
+    var question: String
     var answer: String
-    var question0: String
-    var question1: String?
-    var question2: String?
-    var question3: String?
+    var answers: [String]?
 }
 
 struct Datas {
@@ -44,9 +42,9 @@ class BundleDatas {
         for row in rows {
             let columns = row.components(separatedBy: ";")
             if columns.count == 6 {
-                result.append(QuestionModel(type: QuestionType(rawValue: columns[0]) ?? .test, answer: columns[1], question0: columns[2], question1: columns[3], question2: columns[4], question3: columns[5]))
+                result.append(QuestionModel(type: QuestionType(rawValue: columns[0]) ?? .test, question: columns[1], answer: columns[2], answers: [columns[2],columns[3],columns[4],columns[5]]))
             } else if columns.count == 3 {
-                result.append(QuestionModel(type: QuestionType(rawValue: columns[0]) ?? .test, answer: columns[1], question0: columns[2]))
+                result.append(QuestionModel(type: QuestionType(rawValue: columns[0]) ?? .test, question: columns[1], answer: columns[2]))
             }
         }
         return result

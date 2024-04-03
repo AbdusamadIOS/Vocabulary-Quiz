@@ -10,36 +10,36 @@ import UIKit
 class UnitVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var units: [Unit] = [Unit(text: "Unit 1"),
-                         Unit(text: "Unit 2"),
-                         Unit(text: "Unit 3"),
-                         Unit(text: "Unit 4"),
-                         Unit(text: "Unit 5"),
-                         Unit(text: "Unit 6"),
-                         Unit(text: "Unit 7"),
-                         Unit(text: "Unit 8"),
-                         Unit(text: "Unit 9"),
-                         Unit(text: "Unit 10"),
-                         Unit(text: "Unit 11"),
-                         Unit(text: "Unit 12"),
-                         Unit(text: "Unit 13"),
-                         Unit(text: "Unit 14"),
-                         Unit(text: "Unit 15"),
-                         Unit(text: "Unit 16"),
-                         Unit(text: "Unit 17"),
-                         Unit(text: "Unit 18"),
-                         Unit(text: "Unit 19"),
-                         Unit(text: "Unit 20"),
-                         Unit(text: "Unit 21"),
-                         Unit(text: "Unit 22"),
-                         Unit(text: "Unit 23"),
-                         Unit(text: "Unit 24"),
-                         Unit(text: "Unit 25"),
-                         Unit(text: "Unit 26"),
-                         Unit(text: "Unit 27"),
-                         Unit(text: "Unit 28"),
-                         Unit(text: "Unit 29"),
-                         Unit(text: "Unit 30")]
+//    var units: [Unit] = [Unit(text: "Unit 1"),
+//                         Unit(text: "Unit 2"),
+//                         Unit(text: "Unit 3"),
+//                         Unit(text: "Unit 4"),
+//                         Unit(text: "Unit 5"),
+//                         Unit(text: "Unit 6"),
+//                         Unit(text: "Unit 7"),
+//                         Unit(text: "Unit 8"),
+//                         Unit(text: "Unit 9"),
+//                         Unit(text: "Unit 10"),
+//                         Unit(text: "Unit 11"),
+//                         Unit(text: "Unit 12"),
+//                         Unit(text: "Unit 13"),
+//                         Unit(text: "Unit 14"),
+//                         Unit(text: "Unit 15"),
+//                         Unit(text: "Unit 16"),
+//                         Unit(text: "Unit 17"),
+//                         Unit(text: "Unit 18"),
+//                         Unit(text: "Unit 19"),
+//                         Unit(text: "Unit 20"),
+//                         Unit(text: "Unit 21"),
+//                         Unit(text: "Unit 22"),
+//                         Unit(text: "Unit 23"),
+//                         Unit(text: "Unit 24"),
+//                         Unit(text: "Unit 25"),
+//                         Unit(text: "Unit 26"),
+//                         Unit(text: "Unit 27"),
+//                         Unit(text: "Unit 28"),
+//                         Unit(text: "Unit 29"),
+//                         Unit(text: "Unit 30")]
     var leves: Text?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +79,7 @@ extension UnitVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UnitCell", for: indexPath) as! UnitCell
-        cell.textLbl.text = units[indexPath.row].text
+        cell.textLbl.text = "Unit 1" //units[indexPath.row].text
         return cell
         
     }

@@ -16,7 +16,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var currentQuestion: Question?
+    var currentQuestion: QuestionModel?
     var timer: Timer?
     var sum = 0
     
@@ -25,7 +25,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
         setupTCollectionView()
-        configureUi(question: UnitB1.vocubularies.first!)
+        configureUi(question: Datas.list.first)
         setupNavBar()
         progressTime()
         conteneirView.layer.cornerRadius = 15
@@ -63,14 +63,14 @@ class MainVC: UIViewController {
         
     }
     // TODO: Check Answer function
-    private func checkAnswer(answer: Answer, question: Question) -> Bool {
-        return question.answers.contains(where: { $0.text == answer.text }) && answer.correct
+    private func checkAnswer(answer: String, question: QuestionModel) -> Bool {
+        return Datas.list.answers.contains(where: { $0.text == answer.text }) && answer.correct
         
         }
     // TODO: Configure Ui Update
-    private func configureUi(question: Question) {
-        questionLbl.text = question.text
-        nounLbl.text = question.noun
+    private func configureUi(question: QuestionModel) {
+        questionLbl.text = question.question
+        nounLbl.text = ""
         currentQuestion = question
         collectionView.reloadData()
     
@@ -81,10 +81,10 @@ class MainVC: UIViewController {
         if timePV.progress == 0 {
             print("tugadi va keyingi savol")
            let question = currentQuestion
-            _ = question?.answers
-            if let index = UnitB1.vocubularies.firstIndex(where: { $0.text == question?.text}) {
+//            _ = question?.answers
+            if let index = Datas.list.firstIndex(where: { $0.answer0 == question?.answer1}) {
                 if index < (UnitB1.vocubularies.count - 1) {
-                    let nextQuestion = UnitB1.vocubularies[index + 1]
+                    let nextQuestion = Datas.list[index + 1]
                     currentQuestion = nil
                     configureUi(question: nextQuestion)
                     timePV.progress = 1
@@ -105,37 +105,37 @@ class MainVC: UIViewController {
     }
     // Time Button
     @objc func timeBtn() {
-        timePV.progress = timePV.progress - 0.12
-        if timePV.progress == 0 {
-            print("tugadi va keyingi savol")
-           let question = currentQuestion
-            _ = question?.answers
-            if let index = UnitB1.vocubularies.firstIndex(where: { $0.text == question?.text}) {
-                if index < (UnitB1.vocubularies.count - 1) {
-                    let nextQuestion = UnitB1.vocubularies[index + 1]
-                    currentQuestion = nil
-                    configureUi(question: nextQuestion)
-                    timePV.progress = 1
-                } else {
-                    timer?.invalidate()
-                    let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
-                    scoreVC.result = sum
-                    self.navigationController?.setViewControllers([scoreVC], animated: true)
-                }
-            }
-        }
+//        timePV.progress = timePV.progress - 0.12
+//        if timePV.progress == 0 {
+//            print("tugadi va keyingi savol")
+//           let question = currentQuestion
+//            _ = question?.answers
+//            if let index = UnitB1.vocubularies.firstIndex(where: { $0.text == question?.text}) {
+//                if index < (UnitB1.vocubularies.count - 1) {
+//                    let nextQuestion = UnitB1.vocubularies[index + 1]
+//                    currentQuestion = nil
+//                    configureUi(question: nextQuestion)
+//                    timePV.progress = 1
+//                } else {
+//                    timer?.invalidate()
+//                    let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
+//                    scoreVC.result = sum
+//                    self.navigationController?.setViewControllers([scoreVC], animated: true)
+//                }
+//            }
+//        }
     }
 }
 // MARK: Extension CollectionViewDataSourche and CollectionViewDelegate
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentQuestion?.answers.count ?? 0
+        return Datas.list.first?.answers?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersCell", for: indexPath) as! AnswersCell
-        cell.textLbl.text = currentQuestion?.answers[indexPath.row].text
+        cell.textLbl.text = Datas.list.first?.answers?[indexPath.row]
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -146,7 +146,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             return
         }
         
-        let answer = question.answers[indexPath.row]
+        let answer = Datas.list.first?.answers?[indexPath.row]
         
         if checkAnswer(answer: answer, question: question) {
             // correct answer

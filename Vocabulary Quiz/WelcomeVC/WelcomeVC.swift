@@ -32,8 +32,9 @@ class WelcomeVC: UIViewController {
         navigationItem.title = "Vocabulary Quiz"
         let navigationBarAppearance = UINavigationBarAppearance()
         
-        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                       NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: 
+                                                    UIColor.white,
+                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
     }
 
