@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="firstStarimg" destination="23K-7E-Bz6" id="Nfi-qh-6AF"/>
                 <outlet property="homeBtn" destination="cv7-bh-vFq" id="oAn-ue-yfW"/>
+                <outlet property="numberLbl" destination="UhF-xl-IBo" id="Pbz-ha-qkr"/>
                 <outlet property="refreshBtn" destination="M8E-np-hYp" id="YzC-VF-UIm"/>
                 <outlet property="resultLbl" destination="PM6-4E-nRA" id="G1D-x2-KUQ"/>
                 <outlet property="scoreImg" destination="sDK-uv-4rW" id="fU4-k7-sLB"/>
@@ -63,19 +64,31 @@
                                 </imageView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Zv7-3z-F8F">
-                            <rect key="frame" x="36.666666666666671" y="284.33333333333331" width="160" height="48"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zv7-3z-F8F">
+                            <rect key="frame" x="1.6666666666666714" y="284.33333333333331" width="230" height="48"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM6-4E-nRA">
-                                    <rect key="frame" x="0.0" y="0.0" width="62" height="48"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="600" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM6-4E-nRA">
+                                    <rect key="frame" x="0.0" y="0.0" width="95" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="95" id="ati-WH-NsP"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-xl-IBo">
-                                    <rect key="frame" x="79.999999999999986" y="0.0" width="80.000000000000014" height="48"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT4-FI-XSK">
+                                    <rect key="frame" x="104.99999999999999" y="0.0" width="15" height="48"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="77j-va-w1n"/>
+                                        <constraint firstAttribute="width" constant="15" id="Jai-92-vU4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-xl-IBo">
+                                    <rect key="frame" x="130" y="0.0" width="100" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="77j-va-w1n"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +96,7 @@
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="width" constant="160" id="aps-cn-BgN"/>
+                                <constraint firstAttribute="width" constant="230" id="aps-cn-BgN"/>
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tSb-qK-1Nf">

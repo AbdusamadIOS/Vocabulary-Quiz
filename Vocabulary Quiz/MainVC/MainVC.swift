@@ -6,67 +6,59 @@
 //
 
 import UIKit
+import Foundation
 
 class MainVC: UIViewController {
     
-    @IBOutlet weak var nounLbl: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var conteneirView: UIView!
     @IBOutlet weak var timePV: UIProgressView!
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var yakunlashBtn: UIButton!
     
     var currentQuestion: QuestionModel?
     var timer: Timer?
     var sum = 0
+    var theEnd = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTCollectionView()
+        setupTCollectionViewAndViewUpdate()
         configureUi(question: Datas.list.filter{ $0.type == .test }.first!)
         setupNavBar()
         progressTime()
-        conteneirView.layer.cornerRadius = 15
-        conteneirView.clipsToBounds = true
-        nextBtn.layer.cornerRadius = 7
-        timePV.layer.cornerRadius = 4
-    }
-    func setupNavBar() {
-        navigationItem.title = "Question"
-        navigationItem.hidesBackButton = true
-        
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
-        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
-        
-        let back = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .done, target: self, action: #selector(backBtn))
-        back.tintColor = .white
-        navigationItem.leftBarButtonItem = back
-    }
-    @objc func backBtn() {
-        
-        timer?.invalidate()
-        print("back")
-        self.navigationController?.popViewController(animated: true)
     }
     
+    func setupNavBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
     // TODO: TableView Delegate and DataSource
-    func setupTCollectionView() {
+    func setupTCollectionViewAndViewUpdate() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "AnswersCell", bundle: nil), forCellWithReuseIdentifier: "AnswersCell")
-        
+        conteneirView.layer.cornerRadius = 15
+        conteneirView.clipsToBounds = true
+        nextBtn.layer.cornerRadius = 7
+        yakunlashBtn.layer.cornerRadius = 7
+        timePV.layer.cornerRadius = 4
     }
-    
     // TODO: Configure Ui Update
     private func configureUi(question: QuestionModel) {
         questionLbl.text = question.question
-        nounLbl.text = ""
         currentQuestion = question
-        
+        numberLabel.text = "\(theEnd)"
+    }
+    // TODO: Yakunlash Button
+    @IBAction func yakunlashBtn(_ sender: UIButton) {
+        timer?.invalidate()
+        let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
+        scoreVC.result = sum
+        scoreVC.number = theEnd
+        self.navigationController?.setViewControllers([scoreVC], animated: true)
     }
     // TODO: Next Button
     @IBAction func nextBtn(_ sender: UIButton) {
@@ -78,6 +70,7 @@ class MainVC: UIViewController {
             if let index = Datas.list.firstIndex(where: { $0.answers == question?.answers}) {
                 if index < (Datas.list.count - 1) {
                     let nextQuestion = Datas.list[index + 11]
+                    theEnd += 1
                     currentQuestion = nil
                     configureUi(question: nextQuestion)
                     timePV.progress = 1
@@ -87,36 +80,38 @@ class MainVC: UIViewController {
                     collectionView.reloadData()
                     let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
                     scoreVC.result = sum
+                    scoreVC.number = theEnd
                     self.navigationController?.setViewControllers([scoreVC], animated: true)
                 }
             }
         }
     }
-    
     // TODO: ProgressView time and setting
     func progressTime() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeBtn), userInfo: nil, repeats: true)
     }
-    
     // Time Button
     @objc func timeBtn() {
         timePV.progress = timePV.progress - 0.12
         if timePV.progress == 0 {
             print("tugadi va keyingi savol")
+            print(theEnd)
             let question = currentQuestion
             _ = question?.answers
             if let index = Datas.list.firstIndex(where: { $0.answers == question?.answers}) {
                 if index < (Datas.list.count - 1) {
                     let nextQuestion = Datas.list[index + 11]
                     currentQuestion = nil
+                    theEnd += 1
                     configureUi(question: nextQuestion)
                     timePV.progress = 1
                     collectionView.reloadData()
-                } else {
+            } else {
                     timer?.invalidate()
                     collectionView.reloadData()
                     let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
                     scoreVC.result = sum
+                    scoreVC.number = theEnd
                     self.navigationController?.setViewControllers([scoreVC], animated: true)
                 }
             }
@@ -147,12 +142,14 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         guard let question = currentQuestion else {
             return
         }
+        
         let answer = Datas.list.first?.answers?[indexPath.row]
         if Datas.list[indexPath.row].answer == answer {
             //             correct answer
             if let index = Datas.list.firstIndex(where: { $0.answers == question.answers}) {
                 if index < (Datas.list.count - 1) {
                     sum += 1
+                    theEnd += 1
                     let nextQuestion = Datas.list[index + 11]
                     currentQuestion = nil
                     configureUi(question: nextQuestion)
@@ -162,6 +159,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                     timer?.invalidate()
                     let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
                     scoreVC.result = sum
+                    scoreVC.number = theEnd
                     self.navigationController?.setViewControllers([scoreVC], animated: true)
                 }
             }
@@ -171,9 +169,16 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 if index < (Datas.list.count - 1) {
                     let nextQuestion = Datas.list[index + 11]
                     currentQuestion = nil
+                    theEnd += 1
                     configureUi(question: nextQuestion)
                     collectionView.reloadData()
                     timePV.progress = 1
+                } else {
+                    timer?.invalidate()
+                    let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
+                    scoreVC.result = sum
+                    scoreVC.number = theEnd
+                    self.navigationController?.setViewControllers([scoreVC], animated: true)
                 }
             }
         }
