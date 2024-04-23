@@ -106,7 +106,7 @@ class MainVC: UIViewController {
             let question = currentQuestion
             _ = question?.answers
             if let index = Datas.list.firstIndex(where: { $0.answers == question?.answers}) {
-                if index < (Datas.list.count - 11) {
+                if index < (Datas.list.count - 1) {
                     let nextQuestion = Datas.list[index + 11]
                     currentQuestion = nil
                     configureUi(question: nextQuestion)
@@ -127,17 +127,20 @@ class MainVC: UIViewController {
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Datas.list.first?.answers?.count ?? 0
+        return currentQuestion?.answers?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersCell", for: indexPath) as! AnswersCell
-        cell.textLbl.text = Datas.list.first?.answers?[indexPath.item]
+        
+        cell.textLbl.text = currentQuestion?.answers?[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: (collectionView.frame.height - 80) / 3)
+        
+        return CGSize(width: collectionView.frame.width, height: (collectionView.frame.height - 60) / 4)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -166,7 +169,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             // Wrong answer
             if let index = Datas.list.firstIndex(where: { $0.answers == question.answers}) {
                 if index < (Datas.list.count - 1) {
-                    let nextQuestion = Datas.list[index + 1]
+                    let nextQuestion = Datas.list[index + 11]
                     currentQuestion = nil
                     configureUi(question: nextQuestion)
                     collectionView.reloadData()

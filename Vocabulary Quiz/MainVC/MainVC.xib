@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -55,7 +55,7 @@
                     </constraints>
                 </progressView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pp-lV-DtJ">
-                    <rect key="frame" x="278" y="445.66666666666669" width="85" height="35"/>
+                    <rect key="frame" x="278" y="427.33333333333331" width="85" height="35"/>
                     <color key="backgroundColor" name="cell"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="LfL-5H-D0K"/>
@@ -77,26 +77,26 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lHh-sC-lgg">
-                    <rect key="frame" x="70" y="508" width="253" height="310"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lHh-sC-lgg">
+                    <rect key="frame" x="30" y="477.33333333333326" width="333" height="340.66666666666674"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="2B0-AO-k70">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2B0-AO-k70">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                        <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.61144202950000004" green="0.47682142259999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lHh-sC-lgg" secondAttribute="trailing" constant="70" id="2rk-Fb-R9y"/>
-                <constraint firstItem="lHh-sC-lgg" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.36385" id="6QW-qP-npB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lHh-sC-lgg" secondAttribute="trailing" constant="30" id="2rk-Fb-R9y"/>
+                <constraint firstItem="lHh-sC-lgg" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="6QW-qP-npB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jce-Ig-dQg" secondAttribute="trailing" constant="30" id="CHV-0M-eRB"/>
                 <constraint firstItem="Jce-Ig-dQg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="FDQ-m2-GNl"/>
                 <constraint firstItem="bxK-yN-fat" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="IvI-KT-JSc"/>
-                <constraint firstItem="lHh-sC-lgg" firstAttribute="top" secondItem="2Pp-lV-DtJ" secondAttribute="bottom" constant="27.329999999999998" id="OS1-Sm-DyW"/>
+                <constraint firstItem="lHh-sC-lgg" firstAttribute="top" secondItem="2Pp-lV-DtJ" secondAttribute="bottom" constant="15" id="OS1-Sm-DyW"/>
                 <constraint firstItem="Jce-Ig-dQg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="Rgm-GC-aSG"/>
                 <constraint firstItem="Vfc-gh-Z7J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="WFb-Kw-kAN"/>
                 <constraint firstItem="Vfc-gh-Z7J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="ZUr-RF-Zrx"/>
@@ -105,7 +105,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bxK-yN-fat" secondAttribute="trailing" constant="30" id="jiv-9E-Ou1"/>
                 <constraint firstItem="bxK-yN-fat" firstAttribute="top" secondItem="Vfc-gh-Z7J" secondAttribute="bottom" constant="5" id="pAm-0b-5lQ"/>
                 <constraint firstItem="lHh-sC-lgg" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="tM6-CI-afN"/>
-                <constraint firstItem="lHh-sC-lgg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="zAP-Wr-5yD"/>
+                <constraint firstItem="lHh-sC-lgg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="zAP-Wr-5yD"/>
             </constraints>
             <point key="canvasLocation" x="46.564885496183201" y="20.422535211267608"/>
         </view>
@@ -113,7 +113,7 @@
     <resources>
         <image name="chevron.right.to.line" catalog="system" width="104" height="128"/>
         <namedColor name="cell">
-            <color red="0.99978607890000004" green="0.69504886870000004" blue="0.51631909610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.61699998378753662" blue="0.035000000149011612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
