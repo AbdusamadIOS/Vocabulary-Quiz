@@ -15,6 +15,7 @@ enum QuestionType: String, CaseIterable {
 }
 
 struct QuestionModel {
+    var id: Int
     var type: QuestionType
     var question: String
     var answer: String
@@ -40,11 +41,13 @@ class BundleDatas {
         var result: [QuestionModel] = []
         let rows = data.components(separatedBy: "\r\n")
         for row in rows {
-            let columns = row.components(separatedBy: ";")
-            if columns.count == 6 {
-                result.append(QuestionModel(type: QuestionType(rawValue: columns[0]) ?? .test, question: columns[1], answer: columns[2], answers: [columns[2],columns[3],columns[4],columns[5]]))
-            } else if columns.count == 3 {
-                result.append(QuestionModel(type: QuestionType(rawValue: columns[0]) ?? .test, question: columns[1], answer: columns[2]))
+            for (index, row)in rows.enumerated() {
+                let columns = row.components(separatedBy: ";")
+                if columns.count == 6 {
+                    result.append(QuestionModel(id: index, type: QuestionType(rawValue: columns[0]) ?? .test, question: columns[1], answer: columns[2], answers: [columns[2],columns[3],columns[4],columns[5]]))
+                } else if columns.count == 3 {
+                    result.append(QuestionModel(id: index, type: QuestionType(rawValue: columns[0]) ?? .test, question: columns[1], answer: columns[2]))
+                }
             }
         }
         return result

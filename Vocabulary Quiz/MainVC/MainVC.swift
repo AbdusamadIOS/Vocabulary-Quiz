@@ -129,7 +129,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersCell", for: indexPath) as! AnswersCell
         
-        cell.textLbl.text = currentQuestion?.answers?[indexPath.item]
+        cell.textLbl.text = currentQuestion?.id.description.randomElement()
         return cell
     }
     
@@ -145,7 +145,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let answer = Datas.list.first?.answers?[indexPath.row]
         if Datas.list[indexPath.row].answer == answer {
-            //             correct answer
+            // correct answer
             if let index = Datas.list.firstIndex(where: { $0.answers == question.answers}) {
                 if index < (Datas.list.count - 1) {
                     sum += 1
