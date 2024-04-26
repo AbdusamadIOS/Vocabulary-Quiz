@@ -16,26 +16,22 @@ class MainVC: UIViewController {
     @IBOutlet weak var timePV: UIProgressView!
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var yakunlashBtn: UIButton!
     
     var currentQuestion: QuestionModel?
     var timer: Timer?
     var sum = 0
     var theEnd = 0
+    var list = Datas.list
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTCollectionViewAndViewUpdate()
-        configureUi(question: Datas.list.filter{ $0.type == .test }.first!)
-        setupNavBar()
         progressTime()
-    }
-    
-    func setupNavBar() {
+        setupTCollectionViewAndViewUpdate()
+        configureUi()
         navigationController?.navigationBar.isHidden = true
     }
-    // TODO: TableView Delegate and DataSource
+   
     func setupTCollectionViewAndViewUpdate() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -43,82 +39,52 @@ class MainVC: UIViewController {
         conteneirView.layer.cornerRadius = 15
         conteneirView.clipsToBounds = true
         nextBtn.layer.cornerRadius = 7
-        yakunlashBtn.layer.cornerRadius = 7
         timePV.layer.cornerRadius = 4
     }
-    // TODO: Configure Ui Update
-    private func configureUi(question: QuestionModel) {
-        questionLbl.text = question.question
-        currentQuestion = question
+    
+    private func configureUi() {
+        let index = (0..<list.count).randomElement() ?? 0
+        questionLbl.text = list[index].question
+        questionLbl.adjustsFontSizeToFitWidth = true
+        currentQuestion = list[index]
+        list.remove(at: index)
         numberLabel.text = "\(theEnd)"
+        collectionView.reloadData()
     }
-    // TODO: Yakunlash Button
-    @IBAction func yakunlashBtn(_ sender: UIButton) {
-        timer?.invalidate()
-        let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
-        scoreVC.result = sum
-        scoreVC.number = theEnd
-        self.navigationController?.setViewControllers([scoreVC], animated: true)
-    }
-    // TODO: Next Button
+    
     @IBAction func nextBtn(_ sender: UIButton) {
-        timePV.progress = timePV.progress - 1
-        if timePV.progress == 0 {
-            print("tugadi va keyingi savol")
-            let question = currentQuestion
-            _ = question?.answers
-            if let index = Datas.list.firstIndex(where: { $0.answers == question?.answers}) {
-                if index < (Datas.list.count - 1) {
-                    let nextQuestion = Datas.list[index + 11]
-                    theEnd += 1
-                    currentQuestion = nil
-                    configureUi(question: nextQuestion)
-                    timePV.progress = 1
-                    collectionView.reloadData()
-                } else {
-                    timer?.invalidate()
-                    collectionView.reloadData()
-                    let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
-                    scoreVC.result = sum
-                    scoreVC.number = theEnd
-                    self.navigationController?.setViewControllers([scoreVC], animated: true)
-                }
-            }
-        }
+        timePV.progress = 1
+        questionAndAnswers()
+        print("keyingi savolga o'tildi")
     }
-    // TODO: ProgressView time and setting
+    
     func progressTime() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeBtn), userInfo: nil, repeats: true)
     }
-    // Time Button
+    
     @objc func timeBtn() {
         timePV.progress = timePV.progress - 0.12
         if timePV.progress == 0 {
-            print("tugadi va keyingi savol")
-            print(theEnd)
-            let question = currentQuestion
-            _ = question?.answers
-            if let index = Datas.list.firstIndex(where: { $0.answers == question?.answers}) {
-                if index < (Datas.list.count - 1) {
-                    let nextQuestion = Datas.list[index + 11]
-                    currentQuestion = nil
-                    theEnd += 1
-                    configureUi(question: nextQuestion)
-                    timePV.progress = 1
-                    collectionView.reloadData()
-            } else {
-                    timer?.invalidate()
-                    collectionView.reloadData()
-                    let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
-                    scoreVC.result = sum
-                    scoreVC.number = theEnd
-                    self.navigationController?.setViewControllers([scoreVC], animated: true)
-                }
-            }
+            timePV.progress = 1
+            questionAndAnswers()
+            print("vaqt tugati")
+        }
+    }
+    
+    func questionAndAnswers() {
+        theEnd += 1
+        configureUi()
+        collectionView.reloadData()
+        if theEnd == 20 {
+            timer?.invalidate()
+            collectionView.reloadData()
+            let score = ScoreVC(nibName: "ScoreVC", bundle: nil)
+            score.result = sum
+            navigationController?.setViewControllers([score], animated: true)
         }
     }
 }
-// MARK: Extension CollectionViewDataSourche and CollectionViewDelegate
+
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -129,7 +95,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersCell", for: indexPath) as! AnswersCell
         
-        cell.textLbl.text = currentQuestion?.id.description.randomElement()
+        cell.textLbl.text = currentQuestion?.answers?[indexPath.item]
         return cell
     }
     
@@ -139,49 +105,17 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let question = currentQuestion else {
-            return
-        }
-        
+    
         let answer = Datas.list.first?.answers?[indexPath.row]
         if Datas.list[indexPath.row].answer == answer {
-            // correct answer
-            if let index = Datas.list.firstIndex(where: { $0.answers == question.answers}) {
-                if index < (Datas.list.count - 1) {
-                    sum += 1
-                    theEnd += 1
-                    let nextQuestion = Datas.list[index + 11]
-                    currentQuestion = nil
-                    configureUi(question: nextQuestion)
-                    collectionView.reloadData()
-                    timePV.progress = 1
-                } else {
-                    timer?.invalidate()
-                    let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
-                    scoreVC.result = sum
-                    scoreVC.number = theEnd
-                    self.navigationController?.setViewControllers([scoreVC], animated: true)
-                }
-            }
+            sum += 1
+            timePV.progress = 1
+            questionAndAnswers()
+            print("togri javob")
         } else {
-            // Wrong answer
-            if let index = Datas.list.firstIndex(where: { $0.answers == question.answers}) {
-                if index < (Datas.list.count - 1) {
-                    let nextQuestion = Datas.list[index + 11]
-                    currentQuestion = nil
-                    theEnd += 1
-                    configureUi(question: nextQuestion)
-                    collectionView.reloadData()
-                    timePV.progress = 1
-                } else {
-                    timer?.invalidate()
-                    let scoreVC = ScoreVC(nibName: "ScoreVC", bundle: nil)
-                    scoreVC.result = sum
-                    scoreVC.number = theEnd
-                    self.navigationController?.setViewControllers([scoreVC], animated: true)
-                }
-            }
+            timePV.progress = 1
+            questionAndAnswers()
+            print("xato javob")
         }
     }
 }
-

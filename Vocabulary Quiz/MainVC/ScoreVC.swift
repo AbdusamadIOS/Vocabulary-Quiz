@@ -8,7 +8,7 @@
 import UIKit
 
 class ScoreVC: UIViewController {
-
+    
     @IBOutlet weak var scoreImg: UIImageView!
     @IBOutlet weak var firstStarimg: UIImageView!
     @IBOutlet weak var secondStarImg: UIImageView!
@@ -18,7 +18,6 @@ class ScoreVC: UIViewController {
     @IBOutlet weak var resultLbl: UILabel!
     @IBOutlet weak var numberLbl: UILabel!
     
-    var number = 0
     var result = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,37 +25,33 @@ class ScoreVC: UIViewController {
         setupNavBar()
         refreshBtn.layer.cornerRadius = 12
         homeBtn.layer.cornerRadius = 12
-        let allNumber = number - 1
         resultLbl.text = "\(result)"
-        numberLbl.text = "\(allNumber)"
-        let bad = Double(number) * 0.6
-        let good = Double(number) * 0.8
         
-                if result <= Int(bad) {
-                scoreImg.image = UIImage(named: "bad")
-                navigationItem.title = "Bad!"
-                firstStarimg.image = UIImage(systemName: "star.fill")
-                secondStarImg.image = UIImage(systemName: "star")
-                thredStarImg.image = UIImage(systemName: "star")
-            } else if result <= Int(good) {
-                navigationItem.title = "Good!"
-                scoreImg.image = UIImage(named: "good")
-                firstStarimg.image = UIImage(systemName: "star.fill")
-                secondStarImg.image = UIImage(systemName: "star.fill")
-                thredStarImg.image = UIImage(systemName: "star")
-            } else if result <= number {
-                navigationItem.title = "Very Good!"
-                scoreImg.image = UIImage(named: "nice")
-                firstStarimg.image = UIImage(systemName: "star.fill")
-                secondStarImg.image = UIImage(systemName: "star.fill")
-                thredStarImg.image = UIImage(systemName: "star.fill")
-            }
+        if result <= 14 {
+            scoreImg.image = UIImage(named: "bad")
+            navigationItem.title = "Bad!"
+            firstStarimg.image = UIImage(systemName: "star.fill")
+            secondStarImg.image = UIImage(systemName: "star")
+            thredStarImg.image = UIImage(systemName: "star")
+        } else if result <= 17 {
+            navigationItem.title = "Good!"
+            scoreImg.image = UIImage(named: "good")
+            firstStarimg.image = UIImage(systemName: "star.fill")
+            secondStarImg.image = UIImage(systemName: "star.fill")
+            thredStarImg.image = UIImage(systemName: "star")
+        } else if result <= 20 {
+            navigationItem.title = "Very Good!"
+            scoreImg.image = UIImage(named: "nice")
+            firstStarimg.image = UIImage(systemName: "star.fill")
+            secondStarImg.image = UIImage(systemName: "star.fill")
+            thredStarImg.image = UIImage(systemName: "star.fill")
         }
+    }
     func setupNavBar() {
         let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
-            navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                                       NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
     }
     
     @IBAction func refreshBtn(_ sender: UIButton) {
