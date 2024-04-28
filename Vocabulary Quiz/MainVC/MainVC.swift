@@ -20,7 +20,7 @@ class MainVC: UIViewController {
     var currentQuestion: QuestionModel?
     var timer: Timer?
     var sum = 0
-    var theEnd = 0
+    var round = 0
     var list = Datas.list
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class MainVC: UIViewController {
         
         progressTime()
         setupTCollectionViewAndViewUpdate()
-        configureUi()
+        genereteQuiz()
         navigationController?.navigationBar.isHidden = true
     }
    
@@ -42,13 +42,18 @@ class MainVC: UIViewController {
         timePV.layer.cornerRadius = 4
     }
     
-    private func configureUi() {
+    private func genereteQuiz() {
         let index = (0..<list.count).randomElement() ?? 0
-        questionLbl.text = list[index].question
-        questionLbl.adjustsFontSizeToFitWidth = true
         currentQuestion = list[index]
         list.remove(at: index)
-        numberLabel.text = "\(theEnd)"
+        currentQuestion?.answers?.shuffle()
+        updateUi()
+    }
+    
+    private func updateUi() {
+        questionLbl.text = currentQuestion?.question
+        questionLbl.adjustsFontSizeToFitWidth = true
+        numberLabel.text = "\(round)"
         collectionView.reloadData()
     }
     
@@ -63,7 +68,7 @@ class MainVC: UIViewController {
     }
     
     @objc func timeBtn() {
-        timePV.progress = timePV.progress - 0.12
+        timePV.progress = timePV.progress - 0.1
         if timePV.progress == 0 {
             timePV.progress = 1
             questionAndAnswers()
@@ -72,15 +77,29 @@ class MainVC: UIViewController {
     }
     
     func questionAndAnswers() {
-        theEnd += 1
-        configureUi()
-        collectionView.reloadData()
-        if theEnd == 20 {
+        round += 1
+        genereteQuiz()
+      
+        if round == 20 {
             timer?.invalidate()
             collectionView.reloadData()
             let score = ScoreVC(nibName: "ScoreVC", bundle: nil)
             score.result = sum
             navigationController?.setViewControllers([score], animated: true)
+        }
+    }
+    
+    func checkAnswer(_ userAnswer: String?) {
+        
+        if currentQuestion?.answer == userAnswer {
+            sum += 1
+            timePV.progress = 1
+            questionAndAnswers()
+            print("togri javob")
+        } else {
+            timePV.progress = 1
+            questionAndAnswers()
+            print("xato javob")
         }
     }
 }
@@ -106,16 +125,8 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-        let answer = Datas.list.first?.answers?[indexPath.row]
-        if Datas.list[indexPath.row].answer == answer {
-            sum += 1
-            timePV.progress = 1
-            questionAndAnswers()
-            print("togri javob")
-        } else {
-            timePV.progress = 1
-            questionAndAnswers()
-            print("xato javob")
-        }
+        let cell = collectionView.cellForItem(at: indexPath) as? AnswersCell
+        let userAnswer = cell?.textLbl.text
+        checkAnswer(userAnswer)
     }
 }

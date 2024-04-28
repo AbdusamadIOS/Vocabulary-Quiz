@@ -27,23 +27,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vfc-gh-Z7J">
-                    <rect key="frame" x="30" y="151.66666666666666" width="333" height="139.99999999999997"/>
+                    <rect key="frame" x="30" y="151.66666666666666" width="333" height="179.99999999999997"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYa-rC-98m">
-                            <rect key="frame" x="0.0" y="0.0" width="333" height="140"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYa-rC-98m">
+                            <rect key="frame" x="20" y="20" width="293" height="140"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="32"/>
+                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="30"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="GYa-rC-98m" firstAttribute="top" secondItem="Vfc-gh-Z7J" secondAttribute="top" id="S8v-HL-8Kd"/>
-                        <constraint firstAttribute="trailing" secondItem="GYa-rC-98m" secondAttribute="trailing" id="WFD-Au-bet"/>
-                        <constraint firstItem="GYa-rC-98m" firstAttribute="leading" secondItem="Vfc-gh-Z7J" secondAttribute="leading" id="XL9-1y-TaX"/>
-                        <constraint firstAttribute="bottom" secondItem="GYa-rC-98m" secondAttribute="bottom" id="eTz-6q-tqk"/>
-                        <constraint firstAttribute="height" constant="140" id="gaE-eq-vrn"/>
+                        <constraint firstItem="GYa-rC-98m" firstAttribute="top" secondItem="Vfc-gh-Z7J" secondAttribute="top" constant="20" id="S8v-HL-8Kd"/>
+                        <constraint firstAttribute="trailing" secondItem="GYa-rC-98m" secondAttribute="trailing" constant="20" id="WFD-Au-bet"/>
+                        <constraint firstItem="GYa-rC-98m" firstAttribute="leading" secondItem="Vfc-gh-Z7J" secondAttribute="leading" constant="20" id="XL9-1y-TaX"/>
+                        <constraint firstAttribute="bottom" secondItem="GYa-rC-98m" secondAttribute="bottom" constant="20" id="eTz-6q-tqk"/>
+                        <constraint firstAttribute="height" constant="180" id="gaE-eq-vrn"/>
                     </constraints>
                 </view>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jce-Ig-dQg">
