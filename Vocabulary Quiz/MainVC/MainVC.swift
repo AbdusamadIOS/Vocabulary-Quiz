@@ -31,7 +31,7 @@ class MainVC: UIViewController {
         genereteQuiz()
         navigationController?.navigationBar.isHidden = true
     }
-   
+    
     func setupTCollectionViewAndViewUpdate() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -51,7 +51,9 @@ class MainVC: UIViewController {
     }
     
     private func updateUi() {
-        questionLbl.text = currentQuestion?.question
+        var sentence = currentQuestion?.question
+        sentence = sentence?.replacingOccurrences(of: "<strong>", with: "").replacingOccurrences(of: "</strong>", with: "")
+        questionLbl.text = sentence
         questionLbl.adjustsFontSizeToFitWidth = true
         numberLabel.text = "\(round)"
         collectionView.reloadData()
@@ -79,7 +81,7 @@ class MainVC: UIViewController {
     func questionAndAnswers() {
         round += 1
         genereteQuiz()
-      
+        
         if round == 20 {
             timer?.invalidate()
             collectionView.reloadData()
@@ -124,7 +126,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+        
         let cell = collectionView.cellForItem(at: indexPath) as? AnswersCell
         let userAnswer = cell?.textLbl.text
         checkAnswer(userAnswer)
