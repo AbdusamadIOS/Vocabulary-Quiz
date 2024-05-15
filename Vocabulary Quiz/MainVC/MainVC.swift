@@ -70,7 +70,7 @@ class MainVC: UIViewController {
     }
     
     @objc func timeBtn() {
-        timePV.progress = timePV.progress - 0.8
+        timePV.progress = timePV.progress - 0.085
         if timePV.progress == 0 {
             timePV.progress = 1
             questionAndAnswers()
