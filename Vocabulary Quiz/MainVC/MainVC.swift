@@ -38,6 +38,8 @@ class MainVC: UIViewController {
         collectionView.register(UINib(nibName: "AnswersCell", bundle: nil), forCellWithReuseIdentifier: "AnswersCell")
         conteneirView.layer.cornerRadius = 15
         conteneirView.clipsToBounds = true
+        questionLbl.layer.cornerRadius = 10
+        questionLbl.clipsToBounds = true
         nextBtn.layer.cornerRadius = 7
         timePV.layer.cornerRadius = 4
     }
@@ -79,6 +81,10 @@ class MainVC: UIViewController {
     }
     
     func questionAndAnswers() {
+        if view.backgroundColor == UIColor.systemGreen || view.backgroundColor == UIColor.systemRed {
+            view.backgroundColor = .bg
+        }
+        
         round += 1
         genereteQuiz()
         
@@ -97,11 +103,27 @@ class MainVC: UIViewController {
             sum += 1
             timePV.progress = 1
             questionAndAnswers()
+            changeBackgroundColorTemporarily(view: view, toColor: .green, duration: 0.1)
             print("togri javob")
         } else {
             timePV.progress = 1
             questionAndAnswers()
+            changeBackgroundColorTemporarily(view: view, toColor: .red, duration: 0.1)
             print("xato javob")
+        }
+    }
+    
+    func changeBackgroundColorTemporarily(view: UIView, toColor color: UIColor, duration: TimeInterval) {
+        
+        let originalColor = UIColor.white
+        UIView.animate(withDuration: 0.1, animations: {
+            self.conteneirView.backgroundColor = color
+        }) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                UIView.animate(withDuration: 0.1) {
+                    self.conteneirView.backgroundColor = originalColor
+                }
+            }
         }
     }
 }
