@@ -23,6 +23,8 @@ class TimeAndQuestionVC: UIViewController {
                                                QuestionDataModel(title: "70"),
     ]
     
+    var timeCount: Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,10 +58,20 @@ class TimeAndQuestionVC: UIViewController {
     @IBAction func saqlashButtom(_ sender: UIButton) {
         
         let vc = MainVC(nibName: "MainVC", bundle: nil)
+        vc.timaCount = timeCount
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func timeButtons(_ sender: UIButton) {
+    @IBAction func sekinButton(_ sender: UIButton) {
+        timeCount = 0.04
+    }
+    
+    @IBAction func ortaButton(_ sender: UIButton) {
+        timeCount = 0.08
+    }
+    
+    @IBAction func tezButton(_ sender: UIButton) {
+        timeCount = 0.12
     }
 }
 

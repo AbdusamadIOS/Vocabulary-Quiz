@@ -69,23 +69,8 @@
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AMh-nK-ZZG">
                     <rect key="frame" x="30" y="117" width="300" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHb-ww-K1K">
-                            <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
-                            <color key="backgroundColor" red="0.99850207570000005" green="0.51985460049999999" blue="0.095767161880000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="06J-UT-CfR"/>
-                                <constraint firstAttribute="width" constant="90" id="xmq-dj-XkV"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="o'rta"/>
-                            <connections>
-                                <action selector="timeButtons:" destination="-1" eventType="touchUpInside" id="hmc-lk-Tfk"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQZ-b2-axZ">
-                            <rect key="frame" x="105" y="0.0" width="90" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                             <color key="backgroundColor" red="0.99850207570000005" green="0.51985460049999999" blue="0.095767161880000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="6eM-1F-vo3"/>
@@ -96,7 +81,22 @@
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="sekin"/>
                             <connections>
-                                <action selector="timeButtons:" destination="-1" eventType="touchUpInside" id="RAW-EG-cuv"/>
+                                <action selector="sekinButton:" destination="-1" eventType="touchUpInside" id="eN3-4K-ide"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHb-ww-K1K">
+                            <rect key="frame" x="105" y="0.0" width="90" height="50"/>
+                            <color key="backgroundColor" red="0.99850207570000005" green="0.51985460049999999" blue="0.095767161880000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="06J-UT-CfR"/>
+                                <constraint firstAttribute="width" constant="90" id="xmq-dj-XkV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="o'rta"/>
+                            <connections>
+                                <action selector="ortaButton:" destination="-1" eventType="touchUpInside" id="cVs-O0-pQG"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gZ-hZ-elD">
@@ -111,7 +111,7 @@
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="tez"/>
                             <connections>
-                                <action selector="timeButtons:" destination="-1" eventType="touchUpInside" id="h4Z-T8-QLd"/>
+                                <action selector="tezButton:" destination="-1" eventType="touchUpInside" id="TWU-bY-jVd"/>
                             </connections>
                         </button>
                     </subviews>

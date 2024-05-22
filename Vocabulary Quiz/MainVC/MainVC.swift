@@ -21,6 +21,7 @@ class MainVC: UIViewController {
     var timer: Timer?
     var sum = 0
     var round = 0
+    var timaCount: Float = 0.08
     var list = Datas.list
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class MainVC: UIViewController {
         progressTime()
         setupTCollectionViewAndViewUpdate()
         genereteQuiz()
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
     
     func setupTCollectionViewAndViewUpdate() {
@@ -72,7 +73,7 @@ class MainVC: UIViewController {
     }
     
     @objc func timeBtn() {
-        timePV.progress = timePV.progress - 0.085
+        timePV.progress = timePV.progress - timaCount
         if timePV.progress == 0 {
             timePV.progress = 1
             questionAndAnswers()
