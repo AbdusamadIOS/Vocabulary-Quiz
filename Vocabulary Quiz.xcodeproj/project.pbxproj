@@ -15,12 +15,15 @@
 		EE887D9E2B7A3E2F002E107A /* AnswersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE887D9C2B7A3E2F002E107A /* AnswersCell.xib */; };
 		EE9907A32B6D365900C3214C /* ScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9907A12B6D365900C3214C /* ScoreVC.swift */; };
 		EE9907A42B6D365900C3214C /* ScoreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9907A22B6D365900C3214C /* ScoreVC.xib */; };
+		EEAFBFE12BFB09550064FD13 /* TimeAndQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAFBFDF2BFB09550064FD13 /* TimeAndQuestionVC.swift */; };
+		EEAFBFE22BFB09550064FD13 /* TimeAndQuestionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAFBFE02BFB09550064FD13 /* TimeAndQuestionVC.xib */; };
 		EECDDB3A2B5A95B8007A55E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB392B5A95B8007A55E7 /* AppDelegate.swift */; };
 		EECDDB442B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB422B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld */; };
 		EECDDB462B5A95BA007A55E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECDDB452B5A95BA007A55E7 /* Assets.xcassets */; };
 		EECDDB492B5A95BA007A55E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECDDB472B5A95BA007A55E7 /* LaunchScreen.storyboard */; };
 		EECDDB5A2B5A9644007A55E7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDDB582B5A9644007A55E7 /* MainVC.swift */; };
 		EECDDB5B2B5A9644007A55E7 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECDDB592B5A9644007A55E7 /* MainVC.xib */; };
+		EED9C8352BFE454C00A61353 /* QuestionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9C8342BFE454C00A61353 /* QuestionDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,8 @@
 		EE887D9C2B7A3E2F002E107A /* AnswersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersCell.xib; sourceTree = "<group>"; };
 		EE9907A12B6D365900C3214C /* ScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreVC.swift; sourceTree = "<group>"; };
 		EE9907A22B6D365900C3214C /* ScoreVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreVC.xib; sourceTree = "<group>"; };
+		EEAFBFDF2BFB09550064FD13 /* TimeAndQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndQuestionVC.swift; sourceTree = "<group>"; };
+		EEAFBFE02BFB09550064FD13 /* TimeAndQuestionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeAndQuestionVC.xib; sourceTree = "<group>"; };
 		EECDDB362B5A95B8007A55E7 /* Vocabulary Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vocabulary Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECDDB392B5A95B8007A55E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EECDDB432B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vocabulary_Quiz.xcdatamodel; sourceTree = "<group>"; };
@@ -40,6 +45,7 @@
 		EECDDB4A2B5A95BA007A55E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EECDDB582B5A9644007A55E7 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		EECDDB592B5A9644007A55E7 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		EED9C8342BFE454C00A61353 /* QuestionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 				EECDDB512B5A95E6007A55E7 /* WelcomeVC */,
 				EEF368E42B74922C00658E4E /* MainVC */,
 				EEF368E52B74925900658E4E /* AllCell */,
+				EED9C8342BFE454C00A61353 /* QuestionDataModel.swift */,
 				EECDDB4A2B5A95BA007A55E7 /* Info.plist */,
 				EECDDB422B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld */,
 			);
@@ -87,6 +94,8 @@
 			children = (
 				EE3219562B74DD940065BC9D /* WelcomeVC.swift */,
 				EE3219572B74DD940065BC9D /* WelcomeVC.xib */,
+				EEAFBFDF2BFB09550064FD13 /* TimeAndQuestionVC.swift */,
+				EEAFBFE02BFB09550064FD13 /* TimeAndQuestionVC.xib */,
 			);
 			path = WelcomeVC;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECDDB492B5A95BA007A55E7 /* LaunchScreen.storyboard in Resources */,
+				EEAFBFE22BFB09550064FD13 /* TimeAndQuestionVC.xib in Resources */,
 				489B18122BB53AB400B6D43A /* 4eew1Quizzes.csv in Resources */,
 				EE887D9E2B7A3E2F002E107A /* AnswersCell.xib in Resources */,
 				EE9907A42B6D365900C3214C /* ScoreVC.xib in Resources */,
@@ -203,7 +213,9 @@
 				EECDDB442B5A95B8007A55E7 /* Vocabulary_Quiz.xcdatamodeld in Sources */,
 				EE9907A32B6D365900C3214C /* ScoreVC.swift in Sources */,
 				EE887D9D2B7A3E2F002E107A /* AnswersCell.swift in Sources */,
+				EEAFBFE12BFB09550064FD13 /* TimeAndQuestionVC.swift in Sources */,
 				EECDDB5A2B5A9644007A55E7 /* MainVC.swift in Sources */,
+				EED9C8352BFE454C00A61353 /* QuestionDataModel.swift in Sources */,
 				EECDDB3A2B5A95B8007A55E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

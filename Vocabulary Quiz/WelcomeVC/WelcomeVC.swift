@@ -23,14 +23,23 @@ class WelcomeVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     func setupNavBar() {
-        navigationItem.title = "Vocabulary Quiz"
+        navigationItem.title = "Quiz"
         let navigationBarAppearance = UINavigationBarAppearance()
         
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: 
                                                     UIColor.white,
-                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold) ]
+                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold) ]
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        
+        let time = UIBarButtonItem(image: UIImage(systemName: "deskclock"), style: .done, target: self, action: #selector(timeTap))
+        time.tintColor = .white
+        navigationItem.rightBarButtonItem = time
     }
-
+    
+    @objc func timeTap() {
+        
+        let vc = TimeAndQuestionVC(nibName: "TimeAndQuestionVC", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
