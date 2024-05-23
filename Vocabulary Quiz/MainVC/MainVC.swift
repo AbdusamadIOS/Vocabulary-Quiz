@@ -10,6 +10,7 @@ import Foundation
 
 class MainVC: UIViewController {
     
+    @IBOutlet weak var questionCountLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var conteneirView: UIView!
@@ -19,10 +20,12 @@ class MainVC: UIViewController {
     
     var currentQuestion: QuestionModel?
     var timer: Timer?
+    var list = Datas.list
+    
+    var questionCount = 15
     var sum = 0
     var round = 0
     var timaCount: Float = 0.08
-    var list = Datas.list
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ class MainVC: UIViewController {
         setupTCollectionViewAndViewUpdate()
         genereteQuiz()
         navigationController?.navigationBar.isHidden = false
+        questionCountLabel.text = "/ \(questionCount)"
     }
     
     func setupTCollectionViewAndViewUpdate() {
@@ -89,12 +93,13 @@ class MainVC: UIViewController {
         round += 1
         genereteQuiz()
         
-        if round == 20 {
-            timer?.invalidate()
+        if round == questionCount {
             collectionView.reloadData()
             let score = ScoreVC(nibName: "ScoreVC", bundle: nil)
             score.result = sum
+            score.questionCount = questionCount
             navigationController?.setViewControllers([score], animated: true)
+            timer?.invalidate()
         }
     }
     

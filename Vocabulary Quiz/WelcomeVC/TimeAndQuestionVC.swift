@@ -23,6 +23,7 @@ class TimeAndQuestionVC: UIViewController {
                                                QuestionDataModel(title: "70"),
     ]
     
+    var questionCount = 15
     var timeCount: Float = 0.0
     
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class TimeAndQuestionVC: UIViewController {
         
         let vc = MainVC(nibName: "MainVC", bundle: nil)
         vc.timaCount = timeCount
+        vc.questionCount = questionCount
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -93,5 +95,23 @@ extension TimeAndQuestionVC: UICollectionViewDelegate, UICollectionViewDataSourc
         let widht = (collectionView.frame.width - 30) / 3
         let height = (collectionView.frame.height - 15) / 2
         return CGSize(width: widht, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch indexPath.item {
+        case 0:
+            questionCount = 10
+        case 1:
+            questionCount = 15
+        case 2:
+            questionCount = 20
+        case 3:
+            questionCount = 30
+        case 4:
+            questionCount = 50
+        default:
+            questionCount = 70
+        }
     }
 }

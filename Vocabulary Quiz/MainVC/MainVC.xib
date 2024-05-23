@@ -17,6 +17,7 @@
                 <outlet property="conteneirView" destination="Vfc-gh-Z7J" id="W6b-wM-V1v"/>
                 <outlet property="nextBtn" destination="2Pp-lV-DtJ" id="J7X-uO-ejw"/>
                 <outlet property="numberLabel" destination="ukE-df-J79" id="OLP-nM-sSl"/>
+                <outlet property="questionCountLabel" destination="UPJ-fa-V7F" id="F8R-VX-Pbf"/>
                 <outlet property="questionLbl" destination="GYa-rC-98m" id="i9Q-iS-a6s"/>
                 <outlet property="timePV" destination="Jce-Ig-dQg" id="QWU-XD-eWF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vfc-gh-Z7J">
-                    <rect key="frame" x="30" y="151.66666666666666" width="333" height="179.99999999999997"/>
+                    <rect key="frame" x="30" y="168" width="333" height="180"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYa-rC-98m">
                             <rect key="frame" x="10" y="10" width="313" height="160"/>
@@ -48,7 +49,7 @@
                     </constraints>
                 </view>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jce-Ig-dQg">
-                    <rect key="frame" x="30" y="107.66666666666667" width="333" height="6"/>
+                    <rect key="frame" x="30" y="124" width="333" height="6"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" red="1" green="0.59685213979999996" blue="0.2851973934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -83,10 +84,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5O-ic-Ahc">
-                    <rect key="frame" x="147.66666666666666" y="59" width="98" height="33.666666666666657"/>
+                    <rect key="frame" x="147.66666666666666" y="59" width="98" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukE-df-J79">
-                            <rect key="frame" x="0.0" y="0.0" width="45" height="33.666666666666664"/>
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="rG2-Yd-ODO"/>
                             </constraints>
@@ -94,8 +95,8 @@
                             <color key="textColor" name="Color"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-fa-V7F">
-                            <rect key="frame" x="45" y="0.0" width="53" height="33.666666666666664"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-fa-V7F">
+                            <rect key="frame" x="45" y="0.0" width="53" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="53" id="EmU-YE-yp0"/>
                             </constraints>
