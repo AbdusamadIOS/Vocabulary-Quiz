@@ -10,3 +10,10 @@ import Foundation
 struct QuestionDataModel {
     let title: String
 }
+
+struct ResultDataModel: Codable {
+    var question: String
+    var answer: String
+    var time: String
+    var date: String
+}

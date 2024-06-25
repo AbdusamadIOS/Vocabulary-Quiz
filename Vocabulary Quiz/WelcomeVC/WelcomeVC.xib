@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeVC" customModule="Vocabulary_Quiz" customModuleProvider="target">
             <connections>
                 <outlet property="beginBtn" destination="FQw-A8-Bqe" id="dot-cf-1Uc"/>
+                <outlet property="tableView" destination="YC3-SM-OPt" id="vfE-5U-L7J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,13 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="DpL-GF-n4j">
-                    <rect key="frame" x="0.0" y="59" width="393" height="426"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="DpL-GF-n4j">
+                    <rect key="frame" x="0.0" y="59" width="393" height="340.66666666666669"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQw-A8-Bqe">
-                    <rect key="frame" x="70" y="652" width="253" height="66"/>
+                    <rect key="frame" x="71.666666666666686" y="692" width="250" height="66"/>
                     <color key="backgroundColor" red="1" green="0.59685213979999996" blue="0.2851973934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="250" id="Yun-Gd-2x1"/>
                         <constraint firstAttribute="height" constant="66" id="nK4-Ib-ef8"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
@@ -36,19 +38,29 @@
                         <action selector="beginBtn:" destination="-1" eventType="touchUpInside" id="hVi-Pa-PNA"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YC3-SM-OPt">
+                    <rect key="frame" x="71.666666666666686" y="406.66666666666669" width="250" height="245.33333333333331"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="LeI-L8-nvj"/>
+                    </constraints>
+                    <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.61144202950000004" green="0.47682142259999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="FQw-A8-Bqe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9VH-qp-mrf"/>
                 <constraint firstItem="DpL-GF-n4j" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EbD-rD-bia"/>
+                <constraint firstItem="YC3-SM-OPt" firstAttribute="top" secondItem="DpL-GF-n4j" secondAttribute="bottom" constant="7" id="Irh-xW-tcd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DpL-GF-n4j" secondAttribute="trailing" id="P7W-Md-wO2"/>
                 <constraint firstItem="DpL-GF-n4j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="S5w-EX-hLV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FQw-A8-Bqe" secondAttribute="bottom" constant="100" id="YYE-YI-wj4"/>
-                <constraint firstItem="DpL-GF-n4j" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="hA5-xy-ntX"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FQw-A8-Bqe" secondAttribute="trailing" constant="70" id="iN8-dF-dAu"/>
-                <constraint firstItem="FQw-A8-Bqe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="m8D-En-6fD"/>
+                <constraint firstItem="YC3-SM-OPt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YHn-s4-zz7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FQw-A8-Bqe" secondAttribute="bottom" constant="60" id="YYE-YI-wj4"/>
+                <constraint firstItem="FQw-A8-Bqe" firstAttribute="top" secondItem="YC3-SM-OPt" secondAttribute="bottom" constant="40" id="chi-fR-S0q"/>
+                <constraint firstItem="DpL-GF-n4j" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="hA5-xy-ntX"/>
             </constraints>
-            <point key="canvasLocation" x="123" y="21"/>
+            <point key="canvasLocation" x="122.90076335877862" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>

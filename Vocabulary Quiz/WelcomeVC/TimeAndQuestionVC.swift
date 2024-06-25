@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimeAndQuestionVC: UIViewController {
+class TimeAndQuestionVC: AnimationView {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var ortaTime: UIButton!
@@ -24,7 +24,7 @@ class TimeAndQuestionVC: UIViewController {
     ]
     
     var questionCount = 15
-    var timeCount: Float = 0.0
+    var timeCount: Float = 0.08
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class TimeAndQuestionVC: UIViewController {
     
     func buttonSetting() {
         
+        navigationController?.navigationBar.tintColor = .white
         ortaTime.layer.cornerRadius = 10
         ortaTime.clipsToBounds = true
         ortaTime.layer.borderColor = UIColor.white.cgColor
@@ -58,6 +59,7 @@ class TimeAndQuestionVC: UIViewController {
     
     @IBAction func saqlashButtom(_ sender: UIButton) {
         
+        animateView(sender)
         let vc = MainVC(nibName: "MainVC", bundle: nil)
         vc.timaCount = timeCount
         vc.questionCount = questionCount
@@ -66,14 +68,17 @@ class TimeAndQuestionVC: UIViewController {
     
     @IBAction func sekinButton(_ sender: UIButton) {
         timeCount = 0.04
+        self.animateView(sender)
     }
     
     @IBAction func ortaButton(_ sender: UIButton) {
         timeCount = 0.08
+        self.animateView(sender)
     }
     
     @IBAction func tezButton(_ sender: UIButton) {
         timeCount = 0.12
+        self.animateView(sender)
     }
 }
 
@@ -98,20 +103,27 @@ extension TimeAndQuestionVC: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         
         switch indexPath.item {
         case 0:
             questionCount = 10
+            animateView(cell)
         case 1:
             questionCount = 15
+            animateView(cell)
         case 2:
             questionCount = 20
+            animateView(cell)
         case 3:
             questionCount = 30
+            animateView(cell)
         case 4:
             questionCount = 50
+            animateView(cell)
         default:
             questionCount = 70
+            animateView(cell)
         }
     }
 }

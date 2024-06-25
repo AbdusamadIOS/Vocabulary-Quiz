@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class MainVC: UIViewController {
+class MainVC: AnimationView {
     
     @IBOutlet weak var questionCountLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
@@ -34,6 +34,7 @@ class MainVC: UIViewController {
         setupTCollectionViewAndViewUpdate()
         genereteQuiz()
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.tintColor = .white
         questionCountLabel.text = "/ \(questionCount)"
     }
     
@@ -69,6 +70,7 @@ class MainVC: UIViewController {
     @IBAction func nextBtn(_ sender: UIButton) {
         timePV.progress = 1
         questionAndAnswers()
+        animateView(sender)
         print("keyingi savolga o'tildi")
     }
     
@@ -98,6 +100,7 @@ class MainVC: UIViewController {
             let score = ScoreVC(nibName: "ScoreVC", bundle: nil)
             score.result = sum
             score.questionCount = questionCount
+            score.timeCount = timaCount
             navigationController?.setViewControllers([score], animated: true)
             timer?.invalidate()
         }
@@ -154,7 +157,6 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cell = collectionView.cellForItem(at: indexPath) as? AnswersCell
         let userAnswer = cell?.textLbl.text
         checkAnswer(userAnswer)
