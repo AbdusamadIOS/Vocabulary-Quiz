@@ -49,6 +49,7 @@ class WelcomeVC: AnimationView {
         let vc = MainVC()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     func setupNavBar() {
         navigationItem.title = "Quiz"
         let navigationBarAppearance = UINavigationBarAppearance()
