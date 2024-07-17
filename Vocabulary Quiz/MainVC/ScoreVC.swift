@@ -51,7 +51,7 @@ class ScoreVC: AnimationView {
         let badResult = questionCount * Int(0.6)
         let goodResult = questionCount * Int(0.8)
        
-        if result > badResult {
+        if result > badResult || result == 0 {
             scoreImg.image = UIImage(named: "veryBad")
             navigationItem.title = "Very Bad!"
             firstStarimg.image = UIImage(systemName: "star")
